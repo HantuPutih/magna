@@ -1,21 +1,48 @@
 import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Ubuntu_Sans } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+
+const ubuntuSans = Ubuntu_Sans({
+  variable: "--font-ubuntu-sans",
   subsets: ["latin"],
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export default function Home() {
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
+    <div className={`${ubuntuSans.variable} font-[family-name:var(--font-ubuntu-sans)] bg-[#050301]`}>
+      <div className="relative">
+        <div
+          className="bg-[url(/images/bg_banner.png)] h-[763px] bg-cover"
+        ></div>
+        <div className="absolute top-0 w-full h-full ">
+          <Image
+            src="/images/banner.png"
+            alt="banner"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: '100%', height: 'auto' }}
+          />
+        </div>
+        <div className=" absolute bottom-[170px] left-0 text-center w-full">
+          <div className="text-center text-[42px]">
+            <h1 className=" ">Code Smarter. <i>Build Faster.</i></h1>
+            <h1>Deploy Seamlessly</h1>
+          </div>
+          <div className="">
+            <p>get early access</p>
+            <p>read docs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/*
+<div
+      className={`${geistSans.variable} ${geistMono.variable}  ${ubuntuSans.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
     >
+      <h1 className=" font-[family-name:var(--font-ubuntu-sans)]">ehehehehhehehehe</h1>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
@@ -110,5 +137,4 @@ export default function Home() {
         </a>
       </footer>
     </div>
-  );
-}
+    */
