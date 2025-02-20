@@ -29,8 +29,8 @@ body {
 }
 
 .feature-bg-info-linear{
-  /* bg-[url(/images/texture.png)] */
-  background: url(/images/texture.png), linear-gradient(180.11deg, #110D05 47.74%, #2C180A 99.9%);
+  background: url(/images/texture.png), linear-gradient(180.11deg, #110d05e6 47.74%, #2c180a 99.9%);
+  background-blend-mode: darken;
   background-size: cover;
 }
 
@@ -38,4 +38,22 @@ body {
   border-width: 4px;
   border-style: solid;
   border-image: linear-gradient(180deg, #8E542B 0%, #D6C4A9 100%);
+}
+
+.ai-bg-radial{
+  background: rgb(230,126,82);
+  background: radial-gradient(circle, rgba(230,126,82,1) 35%, rgba(0,0,0,0.5) 100%);
+}
+
+.prepare_for_ai_container{
+  background: rgb(230,126,82);
+  background: url(/images/random-text-bg.png), radial-gradient(circle, rgba(230,126,82,1) 1%, rgba(0, 0, 0, 0.809) 60%);
+  background-blend-mode: darken;
+  background-size: cover;
+}
+
+.code_editor_container{
+  box-shadow: 1px 1px 20px 6px rgba(230,126,86,0.75);
+  -webkit-box-shadow: 1px 1px 20px 6px rgba(230,126,86,0.75);
+  -moz-box-shadow: 1px 1px 20px 6px rgba(230,126,86,0.75);
 }

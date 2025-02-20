@@ -2,13 +2,42 @@ import Image from "next/image";
 import { Ubuntu_Sans } from "next/font/google";
 import ReadDocsButton from "@/components/ReadDocsButton";
 import GetEarlyAccessButton from "@/components/GetEarlyAccessButton";
+import { useState } from "react";
+import Card from "@/components/Card";
+import Link from "next/link";
 
 
 const ubuntuSans = Ubuntu_Sans({
   variable: "--font-ubuntu-sans",
   subsets: ["latin"],
 });
+
+
 export default function Home() {
+  const [cards, setCards] = useState(
+    [
+      {
+        title: "AI That Understands You",
+        textInfo: "Forget wrestling with code. Magna's AI learns your style, so generation is smooth, maintenance is a breeze.",
+        imgUrl:"/images/card1.png",
+        imgAlt:""
+      },
+      {
+        title: "Speed & Precision",
+        textInfo: "Slash development time without sacrificing quality or security. Imagine shipping features faster.",
+        imgUrl:"/images/card2.png",
+        imgAlt:""
+      },
+      {
+        title: "Future-Proof Security",
+        textInfo: "Sleep soundly knowing Magna's AI audits catch vulnerabilities before they become nightmares.",
+        imgUrl:"/images/card3.png",
+        imgAlt:""
+      },
+      
+    ]
+  )
+
   return (
     <div className={`${ubuntuSans.variable} font-[family-name:var(--font-ubuntu-sans)] bg-[#050301] px-10`}>
       {/* banner */}
@@ -68,7 +97,7 @@ export default function Home() {
 
       {/* key feature */}
       <div>
-        <div className="grid grid-cols-5 grid-rows-2">
+        <div className="grid grid-cols-5 grid-rows-2 mb-10">
           <div className="row-start-1 row-end-1 flex justify-left align-center">
             <div className="mt-2 mr-2">
               <div className=" bg-[#FF500B] w-[8px] h-[8px]"></div>
@@ -91,11 +120,14 @@ export default function Home() {
 
         {/* feature's feature */}
         <div>
-          <div className="">
-            <div className="feature-bg-info-linear h-[419px] p-5 border border-[#492215] relative flex justify-between items-end">
-              <div className="">
-                <h1 className="text-white text-[36px]">AI-Assisted Code Editor</h1> 
-                <p className="text-[#B4B4B4] text-base">Magna doesn’t just generate  code—it learns how you code. By understanding your patterns, structure, and preferences, our AI adapts to your style.</p>
+          <div className="font-light">
+            {/* 1 */}
+            <div className="relative feature-bg-info-linear h-[419px] border border-[#492215] grid grid-cols-2 grid-rows-1 gap-5 w-full ">
+              <div className=" p-5 col-start-1 flex items-end">
+                <div className="">
+                  <h1 className="text-white text-[42px]">AI-Assisted Code Editor</h1> 
+                  <p className="text-[#B4B4B4] text-base w-[80%]">Magna doesn’t just generate  code—it learns how you code. By understanding your patterns, structure, and preferences, our AI adapts to your style.</p>
+                </div>
               </div>
               <div className="
                 absolute
@@ -111,7 +143,7 @@ export default function Home() {
                 <h1 className="text-white text-center text-4xl">AI</h1>
                 <h2 className="text-[#D7CFE2] text-xl">Powered</h2>
               </div>
-              <div className="">
+              <div className=" col-start-2 flex  items-end">
                 <Image
                 className=""
                   src="/images/codeprev.png"
@@ -119,118 +151,217 @@ export default function Home() {
                   width={0}
                   height={0}
                   sizes="100vw"
-                  style={{ width: '90%', height: 'auto' }}
+                  style={{ width: '95%', height: 'auto', maxHeight: '412px', }}
                 />
               </div>
             </div>
 
-            <div className=""></div>
-            <div className=""></div>
+             {/* 2 */}
+            <div className="mt-10 h-[419px] border border-[#492215] grid grid-cols-2 grid-rows-1 gap-5 w-full">
+              
+              <div className="p-5 col-start-1 ">
+                <Image
+                className=""
+                  src="/images/graphprev.png"
+                  alt="banner"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{ width: '95%', height: 'auto', maxHeight: '400px', }}
+                />
+              </div>
+
+              <div className="col-start-2 flex items-end justify-end p-10 basis-full">
+                <div className="w-[80%]">
+                  <h1 className="text-white text-[42px]">Real-Time Analytics & Insights </h1> 
+                  <p className=" text-justify text-[#B4B4B4] text-base">Gain a competitive edge with unparalleled insights. Magna provides on-chain analytics and AI-powered recommendations to optimize smart contracts, enhance dApp performance, and proactively identify security risks.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* 3 */}
+            <div className="mt-10  h-[419px] border border-[#492215] grid grid-cols-2 grid-rows-1 gap-5 w-full ">
+              <div className=" p-5 col-start-1 flex items-end">
+                <div className="">
+                  <h1 className="text-white text-[42px]">Autonomous Web3 Agents</h1> 
+                  <p className="text-[#B4B4B4] text-base w-[80%]">Deploy AI-driven agents that monitor blockchain activity, execute automated strategies, and interact with protocols autonomously—whether it’s trading, or contract execution, Magna keep your dApps running smoothly.</p>
+                </div>
+              </div>
+              <div className=" col-start-2 flex items-end">
+                <Image
+                className=""
+                  src="/images/mangaimg2.png"
+                  alt="banner"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{ width: '95%', height: 'auto', maxHeight: '412px', }}
+                />
+              </div>
+            </div>
 
           </div>
+        </div>
+
+
+      </div>
+  
+      {/* prepare for ai */}
+      <div className="prepare_for_ai_container h-[1000px] mt-10">
+          <div className="flex justify-center items-center flex-col font-light">
+            <div className="flex justify-center items-center flex-col py-20 w-[420px] text-center">
+              <div className="mb-6 row-start-1 row-end-1 flex justify-left align-center">
+                <div className="mt-2 mr-2">
+                  <div className=" bg-[#FF500B] w-[8px] h-[8px]"></div>
+                </div>
+                <h5 className="text-[#FF500B]">For Beloved Developer</h5>
+              </div>
+              <div className="text-4xl text-white">
+                <h1>Prepare for <i>AI-Powered</i>  Plugins</h1>
+              </div>
+              <div>
+                <p className="text-[#B4B4B4] text-base">
+                  Supercharge your plugin development with Magna's Plugin AI SDK. Coming soon,  bringing the power of AI to your fingertips.
+                </p>
+              </div>
+            </div>
+
+
+            <div className="">
+              <Image
+              className="code_editor_container rounded-lg"
+                src="/images/code-editor.png"
+                alt="banner"
+                width={895}
+                height={438}
+                sizes="100vw"
+              />
+            </div>
+          </div>
+      </div>
+
+      {/* benefit  */}
+      <div className="">
+        <div className="">
+          <div className="mb-6 row-start-1 row-end-1 flex justify-left align-center">
+            <div className="mt-2 mr-2">
+              <div className=" bg-[#FF500B] w-[8px] h-[8px]"></div>
+            </div>
+            <h5 className="text-[#FF500B]">Benefit</h5>
+          </div>
+
+          <div className="">
+            <div className="">
+              <div className="flex justify-end ">
+                <h1 className="text-white text-4xl font-light w-[500px]">
+                  Tired of wrestling with code? Let Magna's AI be your 
+                  <i>coding sensei!</i>
+                </h1>
+              </div>
+              <div className="flex justify-start ">
+                <p className="text-[#B4B4B4] text-basis font-light w-[500px]">
+                  Our AI-powered platform illuminates your development process, providing intelligent code generation, real-time analytics, and autonomous agents to handle the heavy lifting.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* cards */}
+        <div className="flex justify-between mt-10">
+          {
+            cards.map((card,idx) => {
+              return (
+                <Card
+                  title={card.title}
+                  imgUrl={card.imgUrl}
+                  imgAlt={card.imgAlt}
+                  textInfo={card.textInfo}
+                  key={idx}
+                />
+              )
+            })
+          }
+        </div>
+
+      </div>
+
+      {/* thinks like you */}
+      <div className="bg-[url(/images/magna-bg.png)] bg-cover bg-top">
+        <div className="flex justify-between">
+          <div className="flex flex-col gap-3">
+            <i className="text-lg text-[#A19A9A     ]">Index</i>
+            <Link className="block flex text-white text-lg gap-2" href="/">
+                <Image
+                  src="/arrow-up.svg"
+                  alt="arrow up"
+                  width={16}
+                  height={16}
+                />
+                About Us
+            </Link>
+            <Link className="block flex text-white text-lg gap-2" href="/">
+                <Image
+                  src="/arrow-up.svg"
+                  alt="arrow up"
+                  width={16}
+                  height={16}
+                />
+                Features
+            </Link>
+            <Link className="block flex text-white text-lg gap-2" href="/">
+                <Image
+                  src="/arrow-up.svg"
+                  alt="arrow up"
+                  width={16}
+                  height={16}
+                />
+                Docs
+            </Link>
+          </div>
+          <div className="w-96 flex flex-col justify-center items-center">
+            <div className="mb-10">
+              <h1 className="text-4xl text-white text-center">
+                AI That Thinks Like You, Codes Like You
+              </h1>
+            </div>
+            <GetEarlyAccessButton/>
+          </div>
+            <div className="">
+            <div className="flex flex-col gap-3 items-end">
+              <i className="text-lg text-[#A19A9A]">Connect</i>
+              <Link className="block flex text-white text-lg gap-2" href="/">
+                  <Image
+                    src="/arrow-up.svg"
+                    alt="arrow up"
+                    width={16}
+                    height={16}
+                  />
+                  Twitter
+              </Link>
+              <Link className="block flex text-white text-lg gap-2" href="/">
+                  <Image
+                    src="/arrow-up.svg"
+                    alt="arrow up"
+                    width={16}
+                    height={16}
+                  />
+                  Telegram
+              </Link>
+              <Link className="block flex text-white text-lg gap-2" href="/">
+                  <Image
+                    src="/arrow-up.svg"
+                    alt="arrow up"
+                    width={16}
+                    height={16}
+                  />
+                  Github 
+              </Link>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   );
 }
-
-/*
-<div
-      className={`${geistSans.variable} ${geistMono.variable}  ${ubuntuSans.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <h1 className=" font-[family-name:var(--font-ubuntu-sans)]">ehehehehhehehehe</h1>
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/pages/index.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-    */
