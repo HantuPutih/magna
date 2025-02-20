@@ -10,8 +10,8 @@ interface Card {
 export default function Card(props: Card) {
   return (
     <div className="card_border_grad flex justify-center items-center rounded-xl">
-      <div className="p-5 bg-[url(/images/cardsBg.png)] h-[426px] w-[440px] bg-cover bg-center rounded-xl">
-        <div className="flex justify-center items-center my-10">
+      <div className="p-5 bg-[url(/images/cardsBg.png)] h-[426px] w-auto max-w-[440px] bg-cover bg-center rounded-xl flex flex-col justify-between">
+        <div className="flex justify-center items-center mt-5">
           <Image
             src={props.imgUrl}
             alt={props.imgAlt}

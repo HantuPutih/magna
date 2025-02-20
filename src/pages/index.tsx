@@ -241,7 +241,7 @@ export default function Home() {
       </div>
 
       {/* benefit  */}
-      <div className="">
+      <div className="mt-[55px]">
         <div className="">
           <div className="mb-6 row-start-1 row-end-1 flex justify-left align-center">
             <div className="mt-2 mr-2">
@@ -250,8 +250,8 @@ export default function Home() {
             <h5 className="text-[#FF500B]">Benefit</h5>
           </div>
 
-          <div className="">
-            <div className="">
+          <div className="mt-8">
+            <div className="flex flex-col gap-5">
               <div className="flex justify-end ">
                 <h1 className="text-white text-4xl font-light w-[500px]">
                   Tired of wrestling with code? Let Magna's AI be your 
@@ -268,7 +268,7 @@ export default function Home() {
         </div>
 
         {/* cards */}
-        <div className="flex justify-between mt-10">
+        <div className="flex justify-between mt-[60px] gap-10">
           {
             cards.map((card,idx) => {
               return (
@@ -287,8 +287,8 @@ export default function Home() {
       </div>
 
       {/* thinks like you */}
-      <div className="bg-[url(/images/magna-bg.png)] bg-cover bg-top">
-        <div className="flex justify-between">
+      <div className="bg-[url(/images/magna-bg.png)] bg-cover bg-top pt-10">
+        <div className="flex justify-between ">
           <div className="flex flex-col gap-3">
             <i className="text-lg text-[#A19A9A     ]">Index</i>
             <Link className="block flex text-white text-lg gap-2" href="/">
@@ -360,6 +360,17 @@ export default function Home() {
             </div>
           </div>
 
+        </div>
+
+        <div className="mt-[50px]">
+          <Image
+            src="/images/magna-footer.png"
+            alt="magna logo footer"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: '100%', height: 'auto',mixBlendMode: "screen" }}
+          />
         </div>
       </div>
     </div>
