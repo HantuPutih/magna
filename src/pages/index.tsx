@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { Ubuntu_Sans } from "next/font/google";
+import ReadDocsButton from "@/components/ReadDocsButton";
+import GetEarlyAccessButton from "@/components/GetEarlyAccessButton";
 
 
 const ubuntuSans = Ubuntu_Sans({
@@ -8,29 +10,112 @@ const ubuntuSans = Ubuntu_Sans({
 });
 export default function Home() {
   return (
-    <div className={`${ubuntuSans.variable} font-[family-name:var(--font-ubuntu-sans)] bg-[#050301]`}>
+    <div className={`${ubuntuSans.variable} font-[family-name:var(--font-ubuntu-sans)] bg-[#050301] px-10`}>
+      {/* banner */}
       <div className="relative">
         <div
-          className="bg-[url(/images/bg_banner.png)] h-[763px] bg-cover"
+          className="bg-[url(/images/bg_banner.png)] h-[763px] bg-cover bg-center"
         ></div>
-        <div className="absolute top-0 w-full h-full ">
-          <Image
-            src="/images/banner.png"
-            alt="banner"
-            width={0}
-            height={0}
-            sizes="100vw"
-            style={{ width: '100%', height: 'auto' }}
-          />
+        <div className="">
+          <div className="
+            flex
+            absolute 
+            left-0 
+            top-[3%] 
+            bg-[#251711] 
+            py-[8px] 
+            px-[12px]
+            text-white
+            rounded-xl
+          ">
+            <Image
+              src="/images/magna_small.png"
+              alt="magna small"
+              width={32}
+              height={32}
+            />
+            <h1>MAGNA</h1>
+          </div>
+
+          <div className="absolute top-0 w-full h-full ">
+            <Image
+              src="/images/banner.png"
+              alt="banner"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: '100%', height: 'auto' }}
+            />
+          </div>
+
+          <div className="absolute right-0 top-[5%]">
+            <ReadDocsButton/>
+          </div>
+        
         </div>
-        <div className=" absolute bottom-[170px] left-0 text-center w-full">
+
+        <div className="text-white absolute bottom-[10%] left-0 text-center w-full">
           <div className="text-center text-[42px]">
             <h1 className=" ">Code Smarter. <i>Build Faster.</i></h1>
             <h1>Deploy Seamlessly</h1>
           </div>
+          <div className="mt-5 w-50 flex justify-center align-center basis-full">
+            <GetEarlyAccessButton/>
+            <ReadDocsButton/>
+          </div>
+        </div>
+      </div>
+
+      {/* key feature */}
+      <div>
+        <div className="grid grid-cols-5 grid-rows-2">
+          <div className="row-start-1 row-end-1 flex justify-left align-center">
+            <div className="mt-2 mr-2">
+              <div className=" bg-[#FF500B] w-[8px] h-[8px]"></div>
+            </div>
+            <h5 className="text-[#FF500B]"> Key Features</h5>
+          </div>
+
+          <div className="col-span-2 row-start-3 row-end-3">
+            <div className="text-white text-4xl">
+              <h1>What Makes <i>Magna Different?</i></h1>
+              <h1 className="">Our Key Features</h1>
+            </div>
+          </div>
+
+          <div className="text-[#B4B4B4] col-start-4 col-span-2 row-start-3  row-end-3 mt-auto ">
+            <p className="text-base">Discover how Magna's innovative features can help you build better, faster, and more secure</p>
+          </div> 
+        </div>
+        
+
+        {/* feature's feature */}
+        <div>
           <div className="">
-            <p>get early access</p>
-            <p>read docs</p>
+            <div className="relative flex justify-between items-end">
+              <div className="">
+                <h1>AI-Assisted Code Editor</h1>
+                <p>Magna doesn’t just generate code—it learns how you code. By understanding your patterns, structure, and preferences, our AI adapts to your style.</p>
+              </div>
+              <div className=" absolute bottom-[10%] left-[45%] bg-[#EDC0AD33] ">
+                <h1 className="text-h1">AI</h1>
+                <h2>Powered</h2>
+              </div>
+              <div className="">
+                <Image
+                  src="/images/codeprev.png"
+                  alt="banner"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </div>
+            </div>
+
+            <div className=""></div>
+            <div className=""></div>
+
           </div>
         </div>
       </div>
