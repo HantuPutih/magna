@@ -92,23 +92,34 @@ export default function Home() {
         {/* feature's feature */}
         <div>
           <div className="">
-            <div className="relative flex justify-between items-end">
+            <div className="feature-bg-info-linear h-[419px] p-5 border border-[#492215] relative flex justify-between items-end">
               <div className="">
-                <h1>AI-Assisted Code Editor</h1>
-                <p>Magna doesn’t just generate code—it learns how you code. By understanding your patterns, structure, and preferences, our AI adapts to your style.</p>
+                <h1 className="text-white text-[36px]">AI-Assisted Code Editor</h1> 
+                <p className="text-[#B4B4B4] text-base">Magna doesn’t just generate  code—it learns how you code. By understanding your patterns, structure, and preferences, our AI adapts to your style.</p>
               </div>
-              <div className=" absolute bottom-[10%] left-[45%] bg-[#EDC0AD33] ">
-                <h1 className="text-h1">AI</h1>
-                <h2>Powered</h2>
+              <div className="
+                absolute
+                backdrop-blur-sm 
+                rounded-xl 
+                py-5 px-10 
+                bottom-[10%] 
+                left-[45%] 
+                bg-[#EDC0AD33] 
+                border
+                border-[#8E542B]
+              ">
+                <h1 className="text-white text-center text-4xl">AI</h1>
+                <h2 className="text-[#D7CFE2] text-xl">Powered</h2>
               </div>
               <div className="">
                 <Image
+                className=""
                   src="/images/codeprev.png"
                   alt="banner"
                   width={0}
                   height={0}
                   sizes="100vw"
-                  style={{ width: '100%', height: 'auto' }}
+                  style={{ width: '90%', height: 'auto' }}
                 />
               </div>
             </div>
