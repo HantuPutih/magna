@@ -9,7 +9,7 @@ interface Card {
 }
 export default function Card(props: Card) {
   return (
-    <div className="transition-all hover:scale-110 card_border_grad flex justify-center items-center rounded-xl">
+    <div className="transition-all hover:scale-110 card_border_grad flex justify-center items-center rounded-xl w-1/4">
       <div className="p-5 bg-[url(/images/cardsBg.png)] h-[426px] w-auto max-w-[440px] bg-cover bg-center rounded-xl flex flex-col justify-between">
         <div className="flex justify-center items-center mt-5">
           <Image
@@ -20,7 +20,7 @@ export default function Card(props: Card) {
           />  
         </div>
         <div className="flex flex-col gap-4">
-          <h5 className="font-light text-white">
+          <h5 className="lg:text-lg font-light text-white">
             {props.title}
           </h5>
           <div className="w-[272px] h-[2px] bg-[#926346]"></div>
