@@ -50,6 +50,7 @@ body {
   background: url(/images/random-text-bg.png), radial-gradient(circle, rgba(230,126,82,1) 1%, rgba(0, 0, 0, 0.809) 60%);
   background-blend-mode: darken;
   background-size: cover;
+  background-position: center;
 }
 
 .code_editor_container{
