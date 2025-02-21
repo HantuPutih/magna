@@ -1,5 +1,12 @@
 import { motion } from "motion/react";
 import Image from "next/image";
+import { Playfair_Display } from "next/font/google";
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
+  subsets: ["latin"],
+  style: 'italic'
+})
 
 export default function PrepareAi() {
   return (
@@ -55,7 +62,7 @@ export default function PrepareAi() {
               >
                 <div className=" text-3xl lg:text-4xl text-white">
                   <h1>
-                    Prepare for <i>AI-Powered</i> Plugins
+                    Prepare for <i className={` ${playfairDisplay.variable} font-[family-name:var(--font-playfair-display)]`}>AI-Powered</i> Plugins
                   </h1>
                 </div>
               </motion.div>
@@ -74,7 +81,7 @@ export default function PrepareAi() {
                 }}
               >
                 <div>
-                  <p className="text-[#B4B4B4] text-sm lg:text-base">
+                  <p className="text-[#B4B4B4] text-sm lg:text-base mt-3">
                     Supercharge your plugin development with Magna&apos;s Plugin AI SDK.
                     Coming soon, bringing the power of AI to your fingertips.
                   </p>

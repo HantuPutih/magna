@@ -17,7 +17,7 @@ export default function Card(props: Card) {
             alt={props.imgAlt}
             width={188}
             height={196}
-          />  
+          />
         </div>
         <div className="flex flex-col gap-4">
           <h5 className="lg:text-lg font-light text-white">

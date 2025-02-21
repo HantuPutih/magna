@@ -32,6 +32,7 @@ body {
   background: url(/images/texture.png), linear-gradient(180.11deg, #110d05e6 47.74%, #2c180a 99.9%);
   background-blend-mode: darken;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .border_gradient_ai {

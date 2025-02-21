@@ -2,6 +2,13 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import ReadDocsButton from "./ReadDocsButton";
 import GetEarlyAccessButton from "./GetEarlyAccessButton";
+import { Playfair_Display } from "next/font/google";
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
+  subsets: ["latin"],
+  style: 'italic'
+})
 
 export default function Banner() {
   return (
@@ -21,6 +28,7 @@ export default function Banner() {
         <div
           className="
             flex
+            gap-1
             absolute 
             lg:translate-x-0
             lg:translate-y-0
@@ -84,7 +92,7 @@ export default function Banner() {
         </div>
       </div>
 
-      <div className="text-white absolute bottom-[20%] lg:bottom-[10%] left-0 text-center w-full">
+      <div className="text-white absolute bottom-[20%] lg:bottom-[15%] left-0 text-center w-full">
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -95,7 +103,7 @@ export default function Banner() {
         >
           <div className="text-center text-3xl lg:text-[42px]">
             <h1 className=" ">
-              Code Smarter. <i>Build Faster.</i>
+              Code Smarter. <i className={` ${playfairDisplay.variable} font-[family-name:var(--font-playfair-display)]`}>Build Faster.</i>
             </h1>
             <h1>Deploy Seamlessly</h1>
           </div>
@@ -108,7 +116,7 @@ export default function Banner() {
             scale: { type: "tween", visualDuration: 0.4, bounce: 0.4 },
           }}
         >
-          <div className="mt-5 w-50 flex justify-center align-center basis-full">
+          <div className="mt-10 w-50 flex justify-center align-center basis-full">
             <GetEarlyAccessButton />
             <ReadDocsButton />
           </div>

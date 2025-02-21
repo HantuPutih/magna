@@ -1,10 +1,17 @@
 import { motion } from "motion/react";
 import Image from "next/image";
+import { Playfair_Display } from "next/font/google";
+ 
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
+  subsets: ["latin"],
+  style: 'italic'
+})
 
 export default function KeyFeatures() {
   return (
-    <div className="">
-      <div className="flex flex-col gap-4 p-5 lg:grid lg:grid-cols-5 lg:grid-rows-2 mb-10">
+    <div className="p-5 lg:p-10">
+      <div className="flex flex-col gap-4 p-5 lg:grid lg:grid-cols-5 lg:grid-rows-2 mb-1 lg:mb-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.7, y: 50 }}
           whileInView={{
@@ -41,7 +48,7 @@ export default function KeyFeatures() {
           >
             <div className="text-white  text-3xl lg:text-4xl">
               <h1>
-                What Makes <i>Magna Different?</i>
+                What Makes <i className={` ${playfairDisplay.variable} font-[family-name:var(--font-playfair-display)]`}>Magna Different?</i>
               </h1>
               <h1 className="">Our Key Features</h1>
             </div>
@@ -49,7 +56,7 @@ export default function KeyFeatures() {
 
         </div>
 
-        <div className="text-[#B4B4B4] col-start-4 col-span-2 row-start-3  row-end-3 mt-auto ">
+        <div className="text-[#B4B4B4] col-start-4 col-span-2 row-start-3 row-end-3 mt-auto ">
           <motion.div
             initial={{ opacity: 0, scale: 0.7, y: 50 }}
             whileInView={{
@@ -63,7 +70,7 @@ export default function KeyFeatures() {
               }
             }}
           >
-            <p className="text-base">
+            <p className="text-sm lg:text-base">
               Discover how Magna&apos;s innovative features can help you build
               better, faster, and more secure
             </p>
@@ -108,13 +115,17 @@ export default function KeyFeatures() {
                     backdrop-blur-sm 
                     rounded-xl 
                     py-5 px-10 
-                    bottom-1/3
-                    left-1/3
+                    lg:translate-x-0
+                    lg:translate-y-0
                     lg:bottom-[10%] 
                     lg:left-[45%] 
                     bg-[#EDC0AD33] 
                     border
                     border-[#8E542B]
+                    -translate-y-1/2
+                    -translate-x-1/2
+                    left-1/2
+                    top-[60%]
                   "
               >
 

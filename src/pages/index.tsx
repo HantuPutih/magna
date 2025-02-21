@@ -1,4 +1,4 @@
-import { Ubuntu_Sans } from "next/font/google";
+import { Ubuntu_Sans,Playfair_Display } from "next/font/google";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import KeyFeatures from "@/components/KeyFeatures";
@@ -14,25 +14,29 @@ const ubuntuSans = Ubuntu_Sans({
   subsets: ["latin"],
 });
 
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
+  subsets: ["latin"],
+})
 export default function Home() {
   return (
     <div
-      className={`${ubuntuSans.variable} font-[family-name:var(--font-ubuntu-sans)] bg-[#050301] lg-px-10`}
+      className={`${ubuntuSans.variable} font-[family-name:var(--font-ubuntu-sans)] bg-[#050301]`}
     >
       {/* banner */}
-      <Banner/>
+      <Banner />
 
       {/* key feature */}
       <KeyFeatures />
 
       {/* prepare for ai */}
-      <PrepareAi/>
+      <PrepareAi />
 
       {/* benefit  */}
-      <Benefit/>
+      <Benefit />
 
       {/* thinks like you */}
-      <ThinksLikeYou/>
+      <ThinksLikeYou />
     </div >
   );
 }

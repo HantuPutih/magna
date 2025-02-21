@@ -2,17 +2,24 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import GetEarlyAccessButton from "./GetEarlyAccessButton";
 import Link from "next/link";
+import { Playfair_Display } from "next/font/google";
+
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
+  subsets: ["latin"],
+  style: 'italic'
+})
 
 export default function ThinksLikeYou() {
-  return (<div className="bg-[url(/images/magna-bg.png)] bg-cover bg-top pt-10 lg:mt-[155px]">
-
-    <div className="bg-[url(/images/magna-bg.png)] bg-cover bg-top"></div>
+  return (
+  <div className="bg-[url(/images/magna-bg.png)] bg-cover bg-top pt-10 px-10 lg:mt-[155px]">
     <div className="">
       {/* mobile */}
       <div className=" lg:hidden w-full p-5 flex flex-col justify-center items-center">
         <div className="mb-10">
           <h1 className="text-3xl text-white text-center font-light">
-            AI That <i>Thinks Like You</i>, Codes Like You
+            AI That <i className={` ${playfairDisplay.variable} font-[family-name:var(--font-playfair-display)]`}>Thinks Like You</i>, Codes Like You
           </h1>
         </div>
         <motion.div
@@ -69,8 +76,8 @@ export default function ThinksLikeYou() {
 
         <div className="hidden lg:flex w-96 flex flex-col justify-center items-center">
           <div className="mb-10">
-            <h1 className="text-4xl text-white text-center font-light">
-              AI That <i>Thinks Like You</i>, Codes Like You
+            <h1 className="text-3xl lg:text-4xl text-white text-center font-light">
+              AI That <i className={` ${playfairDisplay.variable} font-[family-name:var(--font-playfair-display)]`}>Thinks Like You</i>, Codes Like You
             </h1>
           </div>
           <motion.div
@@ -146,9 +153,6 @@ export default function ThinksLikeYou() {
           />
         </div>
       </motion.div>
-
     </div>
-
-
   </div>)
 }

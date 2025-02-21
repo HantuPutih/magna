@@ -1,6 +1,13 @@
 import { motion } from "motion/react";
 import Card from "./Card";
 import { useState } from "react";
+import { Playfair_Display } from "next/font/google";
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
+  subsets: ["latin"],
+  style: 'italic'
+})
 
 export default function Benefit() {
   const [cards] = useState([
@@ -28,7 +35,7 @@ export default function Benefit() {
   ]);
 
   return (
-    <div className="  p-5 lg:p-0 mt-10 lg:mt-[55px]">
+    <div className="  p-5 lg:p-10 mt-10 lg:mt-[55px]">
       <div className="">
         <div className="mb-6 row-start-1 row-end-1 flex justify-left align-center">
           <div className="mt-2 mr-2">
@@ -54,7 +61,7 @@ export default function Benefit() {
               <div className="flex justify-end ">
                 <h1 className="text-white text-3xl lg:text-4xl font-light w-[500px]">
                   Tired of wrestling with code? Let Magna&apos;s AI be your
-                  <i>coding sensei!</i>
+                  <i className={` ${playfairDisplay.variable} font-[family-name:var(--font-playfair-display)]`}> coding sensei!</i>
                 </h1>
               </div>
             </motion.div>
@@ -89,7 +96,7 @@ export default function Benefit() {
         {cards.map((card, idx) => {
           return (
             <div key={idx} className="">
-              <motion.div 
+              <motion.div
                 className="hidden lg:block"
                 initial={{ opacity: 0, scale: 0.5, x: -300 }}
                 whileInView={{
