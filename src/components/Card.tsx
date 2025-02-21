@@ -9,7 +9,7 @@ interface Card {
 }
 export default function Card(props: Card) {
   return (
-    <div className="card_border_grad flex justify-center items-center rounded-xl">
+    <div className="transition-all hover:scale-110 card_border_grad flex justify-center items-center rounded-xl">
       <div className="p-5 bg-[url(/images/cardsBg.png)] h-[426px] w-auto max-w-[440px] bg-cover bg-center rounded-xl flex flex-col justify-between">
         <div className="flex justify-center items-center mt-5">
           <Image

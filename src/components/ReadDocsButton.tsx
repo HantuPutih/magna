@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function ReadDocsButton() {
   return (
-    <Link href="/">
+    <Link href="/" className="transition-all hover:scale-110">
       <Image
         src="/images/read-docs-btn.png"
         alt="banner"

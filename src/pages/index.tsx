@@ -77,7 +77,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="absolute right-0 top-[5%]">
+          <div className="absolute right-0 top-[5%] ">
             <ReadDocsButton/>
           </div>
         
@@ -254,7 +254,7 @@ export default function Home() {
             <div className="flex flex-col gap-5">
               <div className="flex justify-end ">
                 <h1 className="text-white text-4xl font-light w-[500px]">
-                  Tired of wrestling with code? Let Magna's AI be your 
+                  Tired of wrestling with code? Let Magna&apos;s AI be your 
                   <i>coding sensei!</i>
                 </h1>
               </div>
@@ -268,7 +268,7 @@ export default function Home() {
         </div>
 
         {/* cards */}
-        <div className="flex justify-between mt-[60px] gap-10">
+        <div className="flex justify-between mt-[60px] py-10 px-6 gap-10 overflow-auto">
           {
             cards.map((card,idx) => {
               return (
@@ -290,7 +290,7 @@ export default function Home() {
       <div className="bg-[url(/images/magna-bg.png)] bg-cover bg-top pt-10">
         <div className="flex justify-between ">
           <div className="flex flex-col gap-3">
-            <i className="text-lg text-[#A19A9A     ]">Index</i>
+            <i className="text-lg text-[#A19A9A]">Index</i>
             <Link className="block flex text-white text-lg gap-2" href="/">
                 <Image
                   src="/arrow-up.svg"
