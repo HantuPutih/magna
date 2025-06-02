@@ -4,7 +4,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 type Data = {
   name: string;
 };
-
+// proxy to back end here
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>,
